@@ -9,7 +9,6 @@ class UserInput:
         try:
             choice = int(input("Enter number of your choice: "))
             if 1 <= choice <= 4:
-                print(choice)
                 return choice
             else:
                 raise ValueError("invalid choice")
@@ -52,8 +51,14 @@ class SolveOperation(UserInput):
         elif choice == 4:
             return self.division(num1, num2)
 
-calculator = SolveOperation()
-calculator.choose_math_operation()
-calculator.get_two_numbers()
+class Calculator(SolveOperation):
+    def calculate(self):
+        while True:
+            choice = self.choose_math_operation()
+            num1, num2 = self.get_two_numbers()
 
+            result = self.operations(choice, num1, num2)
+            print(result)
 
+calculator = Calculator()
+calculator.calculate()
