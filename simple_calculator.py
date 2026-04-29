@@ -1,12 +1,12 @@
 class UserInput:
     def choose_math_operation(self):
-        try:
-            print("Choose math operation:")
-            print("1. Addition")
-            print("2. Subtraction")
-            print("3. Multiplication")
-            print("4. Division")
+        print("Choose math operation:")
+        print("1. Addition")
+        print("2. Subtraction")
+        print("3. Multiplication")
+        print("4. Division")
 
+        try:
             choice = int(input("Enter number of your choice: "))
             if 1 <= choice <= 4:
                 print(choice)
