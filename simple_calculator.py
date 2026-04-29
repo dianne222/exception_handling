@@ -20,9 +20,14 @@ class UserInput:
 
 
     def get_two_numbers(self):
-        num1 = float(input("Enter first number: "))
-        num2 = float(input("Enter second number: "))
+        try:
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
+            return num1, num2
+        except ValueError:
+            print("Please enter a Number")
 
 calculator = UserInput()
 calculator.choose_math_operation()
+calculator.get_two_numbers()
 
