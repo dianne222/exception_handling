@@ -16,7 +16,6 @@ class UserInput:
         except:
             print("Invalid Choice")
 
-
     def get_two_numbers(self):
         try:
             num1 = float(input("Enter first number: "))
@@ -25,8 +24,36 @@ class UserInput:
         except ValueError:
             print("Please enter a Number")
 
+class SolveOperation(UserInput):
+    def addition(self, addends1, addends2):
+        return addends1 + addends2
 
-calculator = UserInput()
+    def subtraction(self, minuend, subtrahend):
+        return minuend - subtrahend
+
+    def multiplication(self, multiplicand, multiplier):
+        return multiplicand * multiplier
+
+    def division(self, dividend, divisor):
+        try:
+            quotient = dividend / divisor
+            return dividend / quotient
+
+        except ZeroDivisionError:
+            print("Cannot divide by zero")
+
+    def operations(self, choice, num1, num2):
+        if choice == 1:
+            return self.addition(num1, num2)
+        elif choice == 2:
+            return self.subtraction(num1, num2)
+        elif choice == 3:
+            return self.multiplication(num1, num2)
+        elif choice == 4:
+            return self.division(num1, num2)
+
+calculator = SolveOperation()
 calculator.choose_math_operation()
 calculator.get_two_numbers()
+
 
