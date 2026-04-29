@@ -12,9 +12,7 @@ class UserInput:
                 print(choice)
                 return choice
             else:
-                raise Exception("invalid choice")
-        except ValueError:
-            print("Please enter a Number")
+                raise ValueError("invalid choice")
         except:
             print("Invalid Choice")
 
@@ -26,6 +24,7 @@ class UserInput:
             return num1, num2
         except ValueError:
             print("Please enter a Number")
+
 
 calculator = UserInput()
 calculator.choose_math_operation()
