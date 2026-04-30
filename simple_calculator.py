@@ -19,12 +19,13 @@ class UserInput:
                 print("Invalid Choice")
 
     def get_two_numbers(self):
-        try:
-            num1 = float(input("Enter first number: "))
-            num2 = float(input("Enter second number: "))
-            return num1, num2
-        except ValueError:
-            print("Please enter a Number")
+        while True:
+            try:
+                num1 = float(input("Enter first number: "))
+                num2 = float(input("Enter second number: "))
+                return num1, num2
+            except ValueError:
+                print("Please enter a Number")
 
 class SolveOperation(UserInput):
     def addition(self, addends1, addends2):
