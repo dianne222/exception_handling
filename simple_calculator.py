@@ -40,10 +40,10 @@ class SolveOperation(UserInput):
     def division(self, dividend, divisor):
         try:
             quotient = dividend / divisor
-            return quotient
 
         except ZeroDivisionError:
-            print("Cannot divide by zero")
+            quotient = "Cannot divide by zero"
+        return quotient
 
     def operations(self, choice, num1, num2):
         if choice == 1:
@@ -66,7 +66,16 @@ class Calculator(SolveOperation):
 
             result = self.operations(choice, num1, num2)
             print(result)
-            continue_choice = input("Do you want to continue?(y/n): ").lower().strip()
+
+            while True:
+                continue_choice = input("Do you want to continue?(y/n): ").lower().strip()
+                if continue_choice == "n":
+                    break
+                elif continue_choice == "y":
+                    break
+                else:
+                    print("Invalid Choice")
+
 
         print("Thank you for using this calculator")
 
