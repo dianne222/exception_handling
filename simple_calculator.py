@@ -1,13 +1,16 @@
 class UserInput:
     def choose_math_operation(self):
         while True:
-            print("Choose math operation:")
-            print("1. Addition")
-            print("2. Subtraction")
-            print("3. Multiplication")
-            print("4. Division")
-            print("------------------")
-            print("0. Exit")
+            print("-" * 26)
+            print("| Choose math operation: |")
+            print("|" + "-" * 24 + "|")
+            print("| 1. Addition            |")
+            print("| 2. Subtraction         |")
+            print("| 3. Multiplication      |")
+            print("| 4. Division            |")
+            print("|" + "-" * 24 + "|")
+            print("| 0. Exit                |")
+            print("-" * 26)
 
             try:
                 choice = int(input("Enter number of your choice: "))
