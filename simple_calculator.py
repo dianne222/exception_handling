@@ -1,19 +1,22 @@
 class UserInput:
     def choose_math_operation(self):
-        print("Choose math operation:")
-        print("1. Addition")
-        print("2. Subtraction")
-        print("3. Multiplication")
-        print("4. Division")
+        while True:
+            print("Choose math operation:")
+            print("1. Addition")
+            print("2. Subtraction")
+            print("3. Multiplication")
+            print("4. Division")
+            print("------------------")
+            print("0. Exit")
 
-        try:
-            choice = int(input("Enter number of your choice: "))
-            if 1 <= choice <= 4:
-                return choice
-            else:
-                raise ValueError("invalid choice")
-        except:
-            print("Invalid Choice")
+            try:
+                choice = int(input("Enter number of your choice: "))
+                if 0 <= choice <= 4:
+                    return choice
+                else:
+                    raise ValueError("invalid choice")
+            except:
+                print("Invalid Choice")
 
     def get_two_numbers(self):
         try:
@@ -56,6 +59,8 @@ class Calculator(SolveOperation):
         continue_choice = "y"
         while continue_choice == "y":
             choice = self.choose_math_operation()
+            if choice == 0:
+               break
             num1, num2 = self.get_two_numbers()
 
             result = self.operations(choice, num1, num2)
