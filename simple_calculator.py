@@ -36,7 +36,7 @@ class SolveOperation(UserInput):
     def division(self, dividend, divisor):
         try:
             quotient = dividend / divisor
-            return dividend / quotient
+            return quotient
 
         except ZeroDivisionError:
             print("Cannot divide by zero")
@@ -53,12 +53,16 @@ class SolveOperation(UserInput):
 
 class Calculator(SolveOperation):
     def calculate(self):
-        while True:
+        continue_choice = "y"
+        while continue_choice == "y":
             choice = self.choose_math_operation()
             num1, num2 = self.get_two_numbers()
 
             result = self.operations(choice, num1, num2)
             print(result)
+            continue_choice = input("Do you want to continue?(y/n): ").lower().strip()
+
+        print("Thank you for using this calculator")
 
 calculator = Calculator()
 calculator.calculate()
